@@ -11,14 +11,21 @@ import io.reactivex.schedulers.Schedulers
 class SpacePresenter(var view: ContractView?) :
     ContractPresenter {
     private val compositeDisposable = CompositeDisposable()
-    private val client = SpaceRetrofitClient.spaceClient
+    private val client = SpaceRetrofitClient.instTest
     private val call = client.getSomeSpace()
     private val LOG = "PresenterClassX"
 
 
-    override fun getRepo() {
+    override fun getRepo(isActive: Boolean) {
         compositeDisposable.add(
             call.subscribeOn(Schedulers.io())
+                .map { i ->
+                    if (isActive) {
+                        i.filter { i -> i.active }
+                    } else {
+                        i
+                    }
+                }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::handleSuccess, this::handleError)
 
@@ -29,9 +36,9 @@ class SpacePresenter(var view: ContractView?) :
     override fun getRepoActive() {
         compositeDisposable.add(
             call.subscribeOn(Schedulers.io())
-                .map { i ->
-                    i.filter { i -> i.active }
-                }
+//                .map { i ->
+//                    i.filter { i -> i.active }
+//                }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::handleSuccess, this::handleError)
 

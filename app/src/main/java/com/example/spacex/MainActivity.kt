@@ -22,11 +22,13 @@ class MainActivity : AppCompatActivity(), ContractView {
 
         rg_radio.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
             override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
-                when (checkedId) {
-                    R.id.rb_active -> presenter.getRepoActive()
-                    R.id.rb_all -> presenter.getRepo()
+                presenter.getRepo(checkedId == R.id.rb_active)
 
-                }
+//                when (checkedId) {
+//                    R.id.rb_active -> presenter.getRepo(true)
+//                    R.id.rb_all -> presenter.getRepo()
+//
+//                }
             }
 
         })
