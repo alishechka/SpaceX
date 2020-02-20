@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <RadioGroup
         android:id="@+id/rg_radio"
         android:layout_width="match_parent"

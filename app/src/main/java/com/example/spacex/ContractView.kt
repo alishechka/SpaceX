@@ -5,7 +5,9 @@ import SpaceBaseListModel
 interface ContractView {
 
         fun showRepo(model: List<SpaceBaseListModel>)
-        fun showError(t: Throwable)
+        fun showError(t:Throwable)
+        fun showLoading()
+        fun hideLoading()
 
 
 }

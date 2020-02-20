@@ -13,10 +13,10 @@ import com.google.gson.annotations.SerializedName
 
 data class First_stage (
 
-	@SerializedName("reusable") val reusable : Boolean,
-	@SerializedName("engines") val engines : Double,
-	@SerializedName("fuel_amount_tons") val fuel_amount_tons : Double,
-	@SerializedName("burn_time_sec") val burn_time_sec : Int,
-	@SerializedName("thrust_sea_level") val thrust_sea_level : Thrust_sea_level,
-	@SerializedName("thrust_vacuum") val thrust_vacuum : Thrust_vacuum
+//	@SerializedName("reusable") val reusable : Boolean,
+	@SerializedName("engines") val engines : Double
+//	@SerializedName("fuel_amount_tons") val fuel_amount_tons : Double,
+//	@SerializedName("burn_time_sec") val burn_time_sec : Int,
+//	@SerializedName("thrust_sea_level") val thrust_sea_level : Thrust_sea_level,
+//	@SerializedName("thrust_vacuum") val thrust_vacuum : Thrust_vacuum
 )

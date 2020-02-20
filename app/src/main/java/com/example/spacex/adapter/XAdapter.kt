@@ -20,6 +20,7 @@ class XAdapter(val models: List<SpaceBaseListModel>) :
                 false
             )
         )
+
     }
 
     override fun getItemCount(): Int {

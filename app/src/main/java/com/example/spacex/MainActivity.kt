@@ -2,11 +2,13 @@ package com.example.spacex
 
 import SpaceBaseListModel
 import android.os.Bundle
+import android.view.View
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spacex.adapter.XAdapter
+import com.example.spacex.presenter.RocketRepositoryImpl
 import com.example.spacex.presenter.SpacePresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -17,20 +19,13 @@ class MainActivity : AppCompatActivity(), ContractView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        presenter = SpacePresenter(this)
+        presenter = SpacePresenter(this, RocketRepositoryImpl())
         presenter.getRepo()
 
         rg_radio.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
             override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
                 presenter.getRepo(checkedId == R.id.rb_active)
-
-//                when (checkedId) {
-//                    R.id.rb_active -> presenter.getRepo(true)
-//                    R.id.rb_all -> presenter.getRepo()
-//
-//                }
             }
-
         })
 
     }
@@ -42,6 +37,16 @@ class MainActivity : AppCompatActivity(), ContractView {
 
     override fun showError(t: Throwable) {
         Toast.makeText(this, t.message, Toast.LENGTH_LONG).show()
+    }
+
+    override fun showLoading() {
+        pb_loading.visibility = View.VISIBLE
+
+    }
+
+    override fun hideLoading() {
+        pb_loading.visibility = View.GONE
+
     }
 
 

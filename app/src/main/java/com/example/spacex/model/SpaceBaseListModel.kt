@@ -11,29 +11,31 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import com.google.gson.annotations.SerializedName
 
-data class SpaceBaseListModel (
+data class SpaceBaseListModel(
 
-	@SerializedName("id") val id : Int,
-	@SerializedName("active") val active : Boolean,
-	@SerializedName("stages") val stages : Int,
-	@SerializedName("boosters") val boosters : Int,
-	@SerializedName("cost_per_launch") val cost_per_launch : Int,
-	@SerializedName("success_rate_pct") val success_rate_pct : Int,
-	@SerializedName("first_flight") val first_flight : String,
-	@SerializedName("country") val country : String,
-	@SerializedName("company") val company : String,
-	@SerializedName("height") val height : Height,
-	@SerializedName("diameter") val diameter : Diameter,
-	@SerializedName("mass") val mass : Mass,
-	@SerializedName("payload_weights") val payload_weights : List<Payload_weights>,
-	@SerializedName("first_stage") val first_stage : First_stage,
-	@SerializedName("second_stage") val second_stage : Second_stage,
-	@SerializedName("engines") val engines : Engines,
-	@SerializedName("landing_legs") val landing_legs : Landing_legs,
-	@SerializedName("flickr_images") val flickr_images : List<String>,
-	@SerializedName("wikipedia") val wikipedia : String,
-	@SerializedName("description") val description : String,
-	@SerializedName("rocket_id") val rocket_id : String,
-	@SerializedName("rocket_name") val rocket_name : String,
-	@SerializedName("rocket_type") val rocket_type : String
+//	@SerializedName("id") val id : Int,
+    @SerializedName("active") val active: Boolean,
+//	@SerializedName("stages") val stages : Int,
+//	@SerializedName("boosters") val boosters : Int,
+//	@SerializedName("cost_per_launch") val cost_per_launch : Int,
+//	@SerializedName("success_rate_pct") val success_rate_pct : Int,
+//	@SerializedName("first_flight") val first_flight : String,
+//	@SerializedName("company") val company : String,
+//	@SerializedName("height") val height : Height,
+//	@SerializedName("diameter") val diameter : Diameter,
+//	@SerializedName("mass") val mass : Mass,
+//	@SerializedName("payload_weights") val payload_weights : List<Payload_weights>,
+//	@SerializedName("second_stage") val second_stage : Second_stage,
+//	@SerializedName("engines") val engines : Engines,
+//	@SerializedName("landing_legs") val landing_legs : Landing_legs,
+//	@SerializedName("flickr_images") val flickr_images : List<String>,
+//	@SerializedName("wikipedia") val wikipedia : String,
+//	@SerializedName("description") val description : String,
+//	@SerializedName("rocket_id") val rocket_id : String,
+//	@SerializedName("rocket_type") val rocket_type : String
+
+    @SerializedName("first_stage") val first_stage: First_stage,
+    @SerializedName("country") val country: String,
+    @SerializedName("rocket_name") val rocket_name: String
+
 )

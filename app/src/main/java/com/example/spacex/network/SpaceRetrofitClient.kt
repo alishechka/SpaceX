@@ -25,4 +25,6 @@ object SpaceRetrofitClient {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build().create(SpaceClient::class.java)
     }
+
+
 }
